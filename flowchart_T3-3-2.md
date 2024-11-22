@@ -23,14 +23,9 @@ flowchart LR;
         Zenodo{{Zenodo}}
         OpenBioDiv{{OpenBioDiv}}
 
-        style Dryad stroke:#f66
-        style GigaDB stroke:#f66
-        style Zenodo stroke:#f66
-        style OpenBioDiv stroke:#f66
-
         end
         subgraph Regional
-        SCAR["`SCAR Antarctic Biodiversity Portal
+        SCAR["`SCAR
             *DwC*`"]
         EurOBIS["`**EurOBIS**
             *DwC*`"] 
@@ -57,5 +52,11 @@ flowchart LR;
         DASSH --> NBN
         DASSH --> GBIF
         end
+
+style Dryad stroke:#f66
+style GigaDB stroke:#f66
+style Zenodo stroke:#f66
+style OpenBioDiv stroke:#f66
+style EnviDat stroke:#f66
 ```
 
