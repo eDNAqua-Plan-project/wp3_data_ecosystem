@@ -13,7 +13,7 @@ flowchart TB;
             *DwC DNA-derived extension*`"]
 
 
-        OBIS <==> GBIF
+        OBIS <== joint strategy==> GBIF
 
         Dryad-processed{{"`Dryad
                 ASV/OTU + species tables
@@ -31,7 +31,7 @@ flowchart TB;
             *fasta*
             *GSC::MIxS + NCBI checklists*`"] 
 
-        ENA <==> NCBI
+        ENA <== INSDC ==> NCBI
 
         Dryad-pre{{"`Dryad
                 fasta
@@ -50,5 +50,6 @@ style Zenodo-processed stroke:#f66
 
 style Dryad-pre stroke:#f66
 style Zenodo-pre stroke:#f66
+
 ```
 
