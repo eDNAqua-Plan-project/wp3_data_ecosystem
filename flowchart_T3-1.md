@@ -5,29 +5,7 @@ For now this only maps the reference libraries reported in the WP4 use cases. Ne
 I also included some of the WP4 recommendations (e.g. using automated pipelines).
 
 ```mermaid
-flowchart TB;
-    subgraph Nucleotide databases;
-        ENA["`EMBL ENA
-            *all sequence data (fasta)*
-            *GSC::MIxS + ENA checklists*
-            *... taxonomy*`"]
-        NCBI["`**NCBI Genbank/SRA**
-            *all sequence data (fasta)*
-            *GSC::MIxS + NCBI checklists*
-            *NCBI taxonomy*`"] 
-
-        ENA <== INSDC ==> NCBI
-
-        end
-        SILVA{{"`**SILVA**`"}}
-
-        OWN1{{"`**own refseq 
-                 from Genbank**`"}}
-        NCBI--- |automated download|OWN1
-
-        OWN2{{"`**own refseq**`"}}
-        NCBI--- |manual download|OWN2
-        IN---OWN2
+flowchart TD;
 
     subgraph Quality-controlled databases;
         
@@ -49,14 +27,35 @@ flowchart TB;
             *marker ...*
             *checklist/standard used?*
             *taxonomic backbone?*`"}}
-
      end
 
+    subgraph Nucleotide databases;
+        ENA["`EMBL ENA
+            *all sequence data (fasta)*
+            *GSC::MIxS + ENA checklists*
+            *... taxonomy*`"]
+        NCBI["`**NCBI Genbank/SRA**
+            *all sequence data (fasta)*
+            *GSC::MIxS + NCBI checklists*
+            *NCBI taxonomy*`"] 
+
+        ENA <== INSDC ==> NCBI
+
+        end
+        SILVA{{"`**SILVA**`"}}
+        FIGSHARE{{"`**FIGSHARE**`"}}
+
+        OWN1{{"`**own reflib**`"}}
+        NCBI--- |automated download|OWN1
+        %%OWN2{{"`**own refseq**`"}}
+        NCBI--- |manual download|OWN1
+        IN---OWN1
 
 
 style IN stroke:#red
-style OWN1 stroke:green
-style OWN2 stroke:red
+%%style OWN1 stroke:green
+style FIGSHARE stroke:red
+linkStyle 1 stroke: green
 
 ```
 
